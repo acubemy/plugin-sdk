@@ -71,10 +71,11 @@ cube turns with the keys `U R F D L B` (Shift = counter-clockwise).
 ## Publishing
 
 Push the repo to GitHub (public). Users install it on acubemy under
-**Games & Plugins** by pasting the repo URL. acubemy pins the exact commit it
-installed, so a later push does not change what users run until they update.
-Tag releases (`v1.0.0`) and link to `https://github.com/owner/repo/tree/v1.0.0`
-to share one exact version.
+**Games & Plugins** by pasting the repo URL. The first install runs a check
+and asks the user for consent; after that, acubemy loads the newest commit of
+the default branch every time the plugin is opened, so pushing to `main`
+ships an update. To share one exact version, tag it (`v1.0.0`) and link to
+`https://github.com/owner/repo/tree/v1.0.0`: that install stays on the tag.
 
 Plugins by anyone other than acubemy are shown as **third-party**: acubemy
 does not review them and takes no responsibility for them.
