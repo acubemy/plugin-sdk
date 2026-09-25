@@ -54,10 +54,11 @@ reachable with normal relative paths (`<link href="style.css">`,
 Open acubemy → **Games & Plugins → Developer mode**. There are three ways to
 load your plugin:
 
-1. **Local server (recommended).** Run a static server in your plugin folder,
-   e.g. `npx serve .`, `python3 -m http.server 8000` or VS Code "Live Server",
-   and enter its URL (`http://localhost:3000`). Multiple files and live reload
-   work as usual.
+1. **Local server (recommended).** Run `npx serve --cors .` in your plugin
+   folder and enter its URL (`http://localhost:3000`). The server must send
+   CORS headers because the sandboxed frame has no origin of its own: without
+   them, module scripts and `fetch` fail. Any static server with a CORS option
+   works, e.g. `npx http-server --cors`.
 2. **Single HTML file.** Drop one `.html` file onto the developer panel. No
    setup, great for a file an AI assistant just wrote for you. For more than
    one file, use a local server.
